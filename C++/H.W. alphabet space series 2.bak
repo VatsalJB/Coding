@@ -1,0 +1,37 @@
+/*
+ABCD
+ ABC
+  AB
+   A
+*/
+#include<iostream.h>
+#include<conio.h>
+void main(){
+char n,a='A',d='A';
+int c=1,b=1;
+
+cout<<"Enter the upper case aplh. ";
+cin>>n;
+
+while(d<=n)
+{
+   while(c<b)
+   {
+   cout<<" ";
+   c++;
+   }
+c=1;
+
+   while(a<=n)
+   {
+   cout<<a;
+   a++;
+   }
+cout<<endl;
+
+a='A';
+n--;
+b++;
+}
+getch();
+}

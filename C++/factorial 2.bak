@@ -1,0 +1,19 @@
+#include<iostream.h>
+#include<conio.h>
+void main(){
+int a;
+cout<<"Enter the number ";
+cin>>a;
+
+if((a==0)||(a==1))
+cout<<"The factorial is 1";
+
+while(a>1)
+{
+a=a*(--a);
+cout<<a;
+--a;
+}
+
+getch();
+}

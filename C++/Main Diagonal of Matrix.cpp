@@ -1,0 +1,27 @@
+#include<iostream.h>
+#include<conio.h>
+void main(){
+int A[3][3],i,j;
+
+cout<<"Enter the first matrix\n";
+
+for(i=0;i<3;i++)
+  for(j=0;j<3;j++)
+  cin>>A[i][j];
+
+cout<<endl;
+
+for(i=0;i<3;i++)
+{
+   for(j=0;j<3;j++)
+   {
+    if(i==j)
+    cout<<A[i][j];
+    else
+    cout<<" ";
+   }
+cout<<endl;
+}
+
+getch();
+}

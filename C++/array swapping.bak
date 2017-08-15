@@ -1,0 +1,38 @@
+/*
+
+  array:
+  1  , 2  , 3 ,4 ,5 , 6......
+  4    5     6  1 2   3
+*/
+
+#include<iostream.h>
+#include<conio.h>
+void main(){
+int a[6],b=0,c;
+
+cout<<"Enter the elements \n";
+
+for(int i=0;i<6;i++)
+{
+cin>>a[i];
+}
+
+for(int i=3;i<6;i++,b++)
+{
+c=a[b];
+a[b]=a[i];
+a[i]=c;
+}
+
+cout<<endl;
+
+for(int i=0;i<6;i++)
+{
+cout<<a[i];
+
+if(i<5)
+cout<<",";
+}
+
+getch();
+}

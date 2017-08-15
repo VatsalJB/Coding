@@ -1,0 +1,23 @@
+#include<iostream.h>
+#include<conio.h>
+void main(){
+int n,b,a=0,c=0;
+
+cout<<"Enter the no.";
+cin>>n;
+
+for(;n>=1;n=n/10){   //n=4005
+b=n%10;
+
+if(b%2==1)
+++a;
+else
+++c;
+}
+
+cout<<"\nUser has entered "<<a++<<a<<" odd nos.";
+
+cout<<"\nUser has entered "<<c<<" even nos.";
+
+getch();
+}

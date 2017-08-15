@@ -1,0 +1,40 @@
+/*
+
+12345
+ 1234
+  123
+   12
+    1
+
+*/
+#include<iostream.h>
+#include<conio.h>
+void main(){
+int n,a=1,c=1;
+
+cout<<"Enter the no. ";
+cin>>n;
+
+while(n>0)
+{
+   while(a<c)
+   {
+   cout<<" ";
+   ++a;
+   }
+a=1;
+
+   while(a<=n)
+   {
+   cout<<a;
+   }
+
+cout<<endl;
+
+a=1;
+n--;
+c++;
+}
+
+getch();
+}

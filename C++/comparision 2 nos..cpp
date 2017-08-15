@@ -1,0 +1,36 @@
+/*
+num1=3425
+num2=3453
+*/
+#include<iostream.h>
+#include<conio.h>
+void main(){
+int n1,n2,a=1,b,c;
+
+cout<<"Enter the two nos. ";
+cin>>n1>>n2;
+
+while(n1>0&&n2>0){
+
+b=n1%10;
+
+n1=n1/10;
+
+c=n2%10;
+
+n2=n2/10;
+
+if(b!=c){
+cout<<"\nDigit no. "<<a<<" from the last is not matching";
+n1=0;
+n2=0;
+}
+
+++a;
+}
+
+if(b==c)
+cout<<"\nBoth nos. are equal.";
+
+getch();
+}

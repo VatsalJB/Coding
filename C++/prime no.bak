@@ -1,0 +1,23 @@
+#include<iostream.h>
+#include<conio.h>
+void main(){
+int a,b;
+cout<<"Enter the number ";
+cin>>a;
+
+if(a==1)
+cout<<"It is neither prime nor composite";
+
+for(b=2;b<=a/2;++b)
+{
+if(a%b==0)
+a=0;
+}
+
+if(a==0)
+cout<<"It is a composite no.";
+else
+cout<<"It is a prime no.";
+
+getch();
+}

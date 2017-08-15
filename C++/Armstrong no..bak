@@ -1,0 +1,33 @@
+#include<iostream.h>
+#include<conio.h>
+#include<math.h>
+void main(){
+int a,b=1,c,sum=0;
+
+cout<<"Enter the no. ";
+cin>>a;
+
+for(c;c>=1;b=b*10)
+{
+if(a/b<=9)
+c=0;
+}
+
+b=b/10;
+cout<<b;
+c=a;
+
+for(;b>0;b=b/10)
+{
+c=c/b;
+sum=sum+pow(c,3);
+c=c%b;
+}
+
+if(sum==a)
+cout<<"\nIt is an Armstrong no.";
+else
+cout<<"\nIt is not an Armstrong no.";
+
+getch();
+}

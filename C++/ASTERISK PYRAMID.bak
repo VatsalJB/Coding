@@ -1,0 +1,36 @@
+/*
+     *
+    ***
+   *****
+  *******
+
+*/
+#include<iostream.h>
+#include<conio.h>
+void main(){
+int a=3,b=4,c=1,d=1;
+
+while(b)
+{
+   while(a)
+   {
+    cout<<" ";
+    a--;
+   }
+
+      while(c)
+      {
+       cout<<"*";
+       c--;
+      }
+
+cout<<endl;
+
+b--;    //b=3
+a=b-1;  //a=2
+d=d+2;
+c=d;
+}
+
+getch();
+}

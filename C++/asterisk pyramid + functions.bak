@@ -1,0 +1,44 @@
+#include<iostream.h>
+#include<conio.h>
+
+void star(){
+int i,j;
+
+cout<<"Which triangle do you want ?";
+cout<<"\n1.Upper\n2.Lower\n";
+
+cin>>i;
+
+cout<<"\n";
+
+switch(i){
+
+case 1 :  for(j=0;j<4;j++)
+          {
+              for(i=0;i<=j;i++)
+              cout<<"*";
+
+           cout<<endl;
+          }
+
+          break;
+
+case 2 :  for(j=0;j<4;j++)
+          {
+              for(i=3-j;i>=j;i--)
+              cout<<"*";
+
+           cout<<endl;
+          }
+
+          break;
+
+default : cout<<"\nEnter the correct choice (1. or 2.)";
+}
+getch();
+}
+
+void main(){
+star();
+}
+

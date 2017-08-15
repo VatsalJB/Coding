@@ -1,0 +1,21 @@
+#include<iostream.h>
+#include<conio.h>
+void main(){
+int a;
+
+cout<<"Enter the no.";
+cin>>a;
+
+/*while(a>0)
+{
+cout<<a%10<<endl;
+a=a/10;
+}*/
+
+for(;a>0;a=a/10)
+{
+cout<<a%10<<endl;
+}
+
+getch();
+}

@@ -1,0 +1,31 @@
+#include<iostream.h>
+#include<conio.h>
+void main(){
+char a,b,c;
+
+cout<<"Enter the characters";
+cin>>c>>b>>a; //A,B,C
+
+switch(c){
+            //c=65 b=66 a=67      c=A  b=B  a=C
+case 'a' :
+++c; //c=66
+b=a++;  //b=67 a=68
+
+case 'd' :
+c=b;     //c=67
+a=++c;    //a=68
+
+case 'f' :
+c=b=a;     //c=b=a=68
+break;
+
+default:
+a=++b;    //a=67  a=C
+b=++c;    //b=66  b=B
+}         //c=65  c=B
+
+cout<<"a= "<<a<<"\nb= "<<b<<"\nc= "<<c;
+
+getch();
+}

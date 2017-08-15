@@ -1,0 +1,26 @@
+#include<iostream.h>
+#include<conio.h>
+void main(){
+int n,a=10;
+
+cout<<"Enter the no.";
+cin>>n;
+
+while(n>=1){
+n=n%a;
+
+    switch(n){
+     case 1 : cout<<"\nOne";
+     break;
+     case 2 : cout<<"\nTwo";
+     break;
+     case 3 : cout<<"\nThree";
+     break;
+     case 4 : cout<<"\nFour";
+     break;
+
+     }
+}
+
+getch();
+}

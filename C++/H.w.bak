@@ -1,0 +1,70 @@
+/*
+ABCD
+ BCD
+  CD
+   D
+  CD
+ BCD
+ABCD
+*/
+
+#include<iostream.h>
+#include<conio.h>
+void main(){
+char n,d,b=d='A',c;
+
+cout<<"Enter the upper case alphabet ";
+cin>>n;
+
+c=n;
+while(d<=n)
+{
+
+  while(c>'A')
+  {
+   cout<<" ";
+   c--;
+  }
+
+  while(b<=n)
+  {
+   cout<<b;
+   b++;
+  }
+
+cout<<endl;
+
+
+d++;
+b=d;
+c=d;
+}
+
+b='C';
+c='C';
+d='C';
+
+while(d>='A')
+{
+
+while(c>'A')
+  {
+   cout<<" ";
+   c--;
+  }
+
+  while(b<='D')
+  {
+   cout<<b;
+   b++;
+  }
+
+cout<<endl;
+
+
+d--;
+c=b=d;
+}
+
+getch();
+}

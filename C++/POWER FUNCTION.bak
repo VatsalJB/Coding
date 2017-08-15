@@ -1,0 +1,29 @@
+#include<iostream.h>
+#include<conio.h>
+int power(int a,b){
+int res=a;
+
+for(;b>0;b--)
+res=res*a;
+
+return(res);
+}
+
+void main(){
+int a,b,res;
+
+cout<<"Enter the base : ";
+cin>>a;
+
+cout<<"\nEnter the power : ";
+cin>>b;
+
+power(a,b);
+
+res=res;
+
+cout<<"\nResult = "<<res;
+
+getch();
+}
+

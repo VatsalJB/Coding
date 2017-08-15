@@ -1,0 +1,23 @@
+#include<iostream.h>
+#include<conio.h>
+void main(){
+float a,b,n,c,sum;
+cout<<"Enter the limit ";
+cin>>n;
+c=1;
+
+while(c<=n)
+{
+a=c/(c+1);
+/*b=(c+1)/(c+2) + a;
+a=(c+2)/(c+3);*/
+
+sum=a+sum;
+++c;
+}
+
+cout<<"The sum is "<<sum;
+
+getch();
+}
+

@@ -1,0 +1,49 @@
+/*
+S=a^2/(a+2)!  + a^3/(a+3)! +  a^4/(a+4)!…………nterms.
+*/
+
+#include<iostream.h>
+#include<conio.h>
+void main(){
+int n,a,i,e;
+float sum=0,d=1,b=2,f=1;
+
+cout<<"Enter the no. ";
+cin>>a;                  //a=2
+
+cout<<"\nEnter the no. of terms ";
+cin>>n;                               //n=3
+
+i=a;
+
+
+while(b<=(n+1))
+{
+e=b;                 //e=2
+        while(e)
+        {
+        d=d*a;         //d=2,4
+        e--;
+        }
+i=i+b;                 //i=4
+            while(i>0)
+            {
+            f=f*i;       //f=4,12,24,24
+            i--;
+            }
+
+/*cout<<"Square = "<<d<<endl;
+cout<<"\nFactorial = "<<f;*/
+
+sum=sum+d/f;
+
+d=1;
+++b;
+f=1;
+i=a;
+}
+
+cout<<"\nSum = "<<sum;
+
+getch();
+}

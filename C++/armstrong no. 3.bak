@@ -1,0 +1,35 @@
+#include<iostream.h>
+#include<conio.h>
+void main(){
+int n1,n2,a,b=10,sum=0,c,d,e=0;
+
+cout<<"Enter the range ";
+cin>>n1>>n2;
+
+d=n1;
+while(d<=n2)
+{
+a=d;
+   while(a>0)
+   {
+   n1=a%b;
+   c=n1*n1*n1;
+   sum=sum+c;
+   a=a/b;
+   }
+
+if(sum==d)
+{
+cout<<d<<" is an Armstrong no.";
+++e;
+}
+
+++d;
+}
+
+if(e==0)
+cout<<"\nThere is no Armstrong no. in the range.";
+
+getch();
+}
+
