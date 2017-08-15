@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1489734717 source:d:\c\scanf_2\main.c
+	<stdio.h>
+	<stdlib.h>
+

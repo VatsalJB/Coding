@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1491133459 source:d:\c\sizeof and srtuct\main.c
+	<stdio.h>
+	<stdlib.h>
+
