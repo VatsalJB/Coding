@@ -1,0 +1,45 @@
+/*
+ Find the max product of remaining energy(divisible by B) and score on screen 1.This gives the combination.
+*/
+#include<iostream>
+#include<stdio.h>
+
+using namespace std;
+
+int main()
+{
+  int t;
+
+  scanf("%d",&t);
+
+  while(t--)
+  {
+    long long int b,n,sc1,sc2,max,energy;
+
+    scanf("%lld",&n);
+    scanf("%lld",&b);
+
+    sc1=max=0;
+    //count=n;
+
+    while(n/b)
+    {
+      sc1++;
+      n--;
+
+      if((sc1*n>max)&&(n%b==0))
+      {
+        max=sc1*n;
+        energy=n;
+      }
+    }
+
+    sc1=max/energy;
+
+    sc2=sc1*energy/b;
+
+    printf("%lld\n",sc2);
+  }
+
+  return 0;
+}

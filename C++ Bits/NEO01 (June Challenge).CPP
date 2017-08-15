@@ -1,0 +1,79 @@
+#include<iostream>
+#include<conio.h>
+//#include<algorithm>
+
+//using namespace std;
+
+int main()
+{
+  int t;
+  long int sum=0;
+
+  cin>>t;
+
+  while(t--)
+  {
+    sum=0;
+
+    int n,list[100000],pos;
+
+    cin>>n;
+
+    for(int i=0;i<n;i++)
+    cin>>list[i];
+
+    for(int i=0;i<n;i++)
+       for(int j=i;j<n;j++)
+       if(list[i]>list[j])
+       {
+          int temp=list[i];
+          list[i]=list[j];
+          list[j]=temp;
+       }
+
+ //   for(int i=0;i<n;i++)
+ //   cout<<list[i]<<" ";
+
+//    sort(list,list+n);
+
+    for(pos=0;pos<n;pos++)
+     if(list[pos]>=0)
+     break;
+
+
+    //for(int i=0;i<pos;i++)
+    //sum=sum+list[i];
+
+ //   if(pos!=n)
+ 
+    for(int i=pos;i<n;i++)
+    sum=sum+(list[i]*(n-pos));
+
+    if(pos!=n)
+    for(int i=pos-1,j=0;i>=0;i--)
+       if((sum/(n-pos+j)+list[i])*(n-pos+j+1)>sum)
+       {
+         sum=(sum/(n-pos+j)+list[i])*(n-pos+j+1);
+         j++;
+       }  
+       else
+       {
+         pos=i;
+         break;
+       }
+
+    if(pos==n)
+    pos--;
+
+    if(list[pos]<0)   
+    for(int i=pos;i>=0;i--)
+    sum+=list[i];
+
+
+    cout<<sum<<endl;
+  }
+
+  getch();
+
+  return 0;
+}

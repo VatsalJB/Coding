@@ -1,0 +1,43 @@
+#include<iostream>
+//#include<conio.h>
+
+using namespace std;
+
+int main()
+{
+   int t,A[100000],B[100000],C[100000];
+
+   cin>>t;
+
+   while(t--)
+   {
+      int p,q,r;
+      long long int sum=0;
+
+      cin>>p>>q>>r;
+
+      for(int i=0;i<p;i++)
+      cin>>A[i];
+
+      for(int i=0;i<q;i++)
+      cin>>B[i];
+
+      for(int i=0;i<r;i++)
+      cin>>C[i];
+
+
+      for(int i=0;i<p;i++)
+        for(int j=0;j<q;j++)
+           for(int k=0;k<r;k++)
+             if(B[j]>=A[i]&&B[j]>=C[k])
+             sum+=(A[i]+B[j])*(B[j]+C[k]);
+
+      sum=sum%1000000007;
+
+      cout<<sum<<endl;
+    }
+
+//    getch();
+
+    return 0;
+}

@@ -1,0 +1,55 @@
+#include<iostream>
+#include<string.h>
+#include<stdio.h>
+using namespace std;
+
+int main()
+{
+   int t;
+
+   cin>>t;
+
+   while(t--)
+   {
+     char s[50];
+     int n,count=0;
+
+     for(int i=0;i<50;i++)
+     cin>>s[i];
+
+     for(n=0;s[n]=='U'||s[n]=='D';n++);
+    
+     for(int i=0;i<=n;i++)
+     if(s[i]=='U')
+     count++;
+
+     if(count>(n-count))
+     {
+       int i;
+       count=0;
+
+       for(i=0;i<n-1;i++)
+       if(s[i]=='D'&&s[i+1]!='D')
+       count++;
+
+       if(s[i]=='D'&&s[i-1]!='D')
+       count++;
+     }
+     else
+     {
+       int i;
+       count=0;
+
+       for(i=0;i<n-1;i++)
+       if(s[i]=='U'&&s[i+1]!='U')
+       count++;
+       
+       if(s[i]=='U'&&s[i-1]!='U')
+       count++;
+     }
+
+     cout<<count<<endl;
+   }
+
+return 0;
+}
