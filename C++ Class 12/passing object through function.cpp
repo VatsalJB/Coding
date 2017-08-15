@@ -1,0 +1,148 @@
+#include<iostream.h>
+#include<conio.h>
+
+class density
+{
+  int mat[20][20],n;
+
+  public :
+
+  density(){}
+
+  density(int i)
+  {
+    cout<<"\nEnter the dimension of the square matrix : ";
+    cin>>n;
+  }
+
+  density(density &den)
+  {
+    int i,j;
+
+    n=den.n;
+
+    for(i=0;i<n;i++)
+      for(j=0;j<n;j++)
+      mat[i][j]=den.mat[i][j];
+
+  }
+
+
+  void input();
+  void steadystate();
+  void display();
+  void runningstate(density,density);
+
+};
+
+
+void density :: input()
+{
+  cout<<"\nEnter the densities : ";
+
+  for(int i=0;i<n;i++)
+    for(int j=0;j<n;j++)
+    cin>>mat[i][j];
+
+
+}
+
+void density :: steadystate()
+{
+  int i,j,k=1;
+
+  for(i=0,j=0;j<n;j++)
+  {
+    if(mat[i][j]!=1 && mat[j][i]!=1)
+    {
+      k=0;
+      break;
+    }
+  }
+
+  for(i=j=n-1;j>=0;j--)
+  {
+     if(mat[i][j]!=1 && mat[j][i]!=1)
+     {
+       k=0;
+       break;
+     }
+  }
+
+  if(k==0)
+  cout<<"\nSteady state not reached.";
+  else
+  cout<<"\nSteady state reached.";
+
+}
+
+void density :: display()
+{
+  cout<<"\nThe matrix is : \n";
+
+  for(int i=0;i<n;i++)
+  {
+     for(int j=0;j<n;j++)
+     cout<<mat[i][j]<<" ";
+
+     cout<<endl;
+  }
+
+}
+
+void density :: runningstate(density d,density e)
+{
+  int i,k=1;
+
+  for(i=0;i<d.n;i++)
+    if(d.mat[i][i]!=1)
+    {
+     k=0;
+     break;
+    }
+
+  if(k!=0)
+  {
+   for(i=0;i<e.n;i++)
+     if(d.mat[i][i]!=1)
+     {
+      k=0;
+      break;
+     }
+  }
+
+  if(k==0)
+  cout<<"\n\nThey are not in running state.\n";
+  else
+  cout<<"\n\nThey are in running state.\n";
+
+}
+
+
+void main(){
+density d(1),cpy;
+
+d.input();
+d.display();
+d.steadystate();
+
+cout<<endl;
+
+density e(1);
+
+e.input();
+e.display();
+e.steadystate();
+
+d.runningstate(d,e);
+
+cout<<"\n\nCopying...";
+
+cpy=d;
+
+cout<<"\nCopied values are : \n";
+
+cpy.display();
+
+getch();
+}

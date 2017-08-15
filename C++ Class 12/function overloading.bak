@@ -1,0 +1,86 @@
+#include<iostream.h>
+#include<conio.h>
+
+class area
+{
+
+  float l,b;
+
+  public :
+
+  void area1(int i)
+  {
+    cout<<"\nEnter the side of square : ";
+    cin>>l;
+
+    cout<<"\nThe area of the square is : "<<l*l;
+  }
+
+  void area1()
+  {
+    cout<<"\nEnter the length of the rectangle : ";
+    cin>>l;
+    cout<<"\nEnter the breadth of the rectangle : ";
+    cin>>b;
+    cout<<"\nThe area of the rectangle is : "<<l*b;
+  }
+
+  void c_area(int i)
+  {
+    cout<<"\nEnter the radius of circle : ";
+    cin>>l;
+    cout<<"\nThe area of the circle is : "<<3.14*l*l;
+  }
+
+  void c_area()
+  {
+    cout<<"\nEnter the height of the cylinder : ";
+    cin>>l;
+
+    cout<<"\nEnter the radius of the cylinder : ";
+    cin>>b;
+
+    cout<<"\nThe area of the cylinder is : "<<2*3.14*b*(b+l);
+  }
+
+};
+
+void main(){
+
+area a;
+
+int i,j=0;
+
+for(;j!=2;){
+cout<<"\n\nMENU\n\n";
+cout<<"1.Area of square\n2.Area of rectangle\n3.Area of circle\n4.Area of cylinder\n";
+cout<<"\nEnter your choice : ";
+cin>>i;
+
+switch(i){
+
+case 1 : a.area1(i);
+
+         break;
+
+case 2 : a.area1();
+
+         break;
+
+case 3 : a.c_area(i);
+
+         break;
+
+case 4 : a.c_area();
+
+         break;
+
+default : "\nEnter a correct choice";
+}
+
+cout<<"\nWant to enter more ?\n1.Yes\n2.No";
+cin>>j;
+}
+
+getch();
+}

@@ -1,0 +1,38 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdio.h>
+
+void main(){
+
+int s1,s2;
+
+cout<<"\nEnter the size of first string : ";
+cin>>s1;
+
+char* A = new char(s1);
+
+cout<<"\nEnter the first string : ";
+gets(A);
+
+cout<<"\nEnter the size of second string : ";
+cin>>s2;
+
+char* B = new char(s2);
+
+cout<<"\nEnter the second string : ";
+gets(B);
+
+char* C = new char(s1+s2);
+
+int i;
+
+for(i=0;i<s1;i++)
+C[i]=A[i];
+
+for(int j=0;j<s2;j++,i++)
+C[i]=B[j];
+
+cout<<"\nMerged string is : "<<C;
+
+getch();
+}

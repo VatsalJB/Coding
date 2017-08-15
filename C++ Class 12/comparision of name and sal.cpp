@@ -1,0 +1,62 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdio.h>
+
+class employee
+{
+  public :
+
+  int sal[2];
+  char name[2][10];
+
+  void input()
+  {
+   int i;
+
+   for(i=0;i<2;i++)
+   {
+    cout<<"\nEnter the name of employee "<<i+1<<" : ";
+    gets(name[i]);
+
+    cout<<"\nEnter the salary : ";
+    cin>>sal[i];
+   }
+  }
+
+};
+
+void main(){
+
+employee e;
+
+int i,j;
+
+e.input();
+
+if(e.sal[0]==e.sal[1])
+cout<<"\nTheir salaries are equal.";
+else
+cout<<"\nTheir salaries are not equal.";
+
+for(i=0;e.name[0][i]!='\0';i++);
+for(j=0;e.name[1][j]!='\0';j++);
+
+if(i==j)
+{
+ i--;
+
+ for(;i>=0;i--)
+   if(e.name[1][i]!=e.name[0][i])
+   break;
+
+ if(i<0)
+ cout<<"\nTheir names are same.";
+ else
+ cout<<"\nTheir names are not same.";
+}
+else
+cout<<"\nTheir names are not same.";
+
+
+getch();
+}

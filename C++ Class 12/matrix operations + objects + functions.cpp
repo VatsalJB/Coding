@@ -1,0 +1,90 @@
+#include<iostream.h>
+#include<conio.h>
+
+class matrix
+{
+  public :
+
+  int m[3][3];
+
+  void input();
+  void display();
+  void add(matrix,matrix);
+  void d_sum(matrix);
+
+};
+
+
+void matrix :: input()
+{
+  cout<<"\nEnter the matrix elements : ";
+
+  for(int i=0;i<3;i++)
+     for(int j=0;j<3;j++)
+     cin>>m[i][j];
+
+}
+
+void matrix :: display()
+{
+  cout<<"\nThe matrix is : ";
+
+  for(int i=0;i<3;i++)
+  {
+     for(int j=0;j<3;j++)
+     cout<<m[i][j]<<" ";
+
+    cout<<endl;
+  }
+
+}
+
+
+void matrix :: add(matrix a,matrix b)
+{
+  int i,j,mat[3][3];
+
+  for(i=0;i<3;i++)
+     for(j=0;j<3;j++)
+     mat[i][j]=a.m[i][j]+b.m[i][j];
+
+  cout<<"\nSum of both matrices is : \n";
+
+  for(i=0;i<3;i++)
+  {
+     for(j=0;j<3;j++)
+     cout<<mat[i][j];
+
+   cout<<endl;
+  }
+
+}
+
+void matrix :: d_sum(matrix a)
+{
+   int i,sum=0;
+
+   for(i=0;i<3;i++)
+   sum=sum+a.m[i][i];
+
+   cout<<"\nThe sum of diagonal is : "<<sum;
+
+}
+
+
+void main(){
+matrix m1,m2;
+
+m1.input();
+m1.display();
+m2.input();
+m2.display();
+
+m1.d_sum(m1);
+m2.d_sum(m2);
+
+m1.add(m1,m2);
+
+
+getch();
+}

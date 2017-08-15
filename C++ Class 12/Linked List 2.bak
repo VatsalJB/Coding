@@ -1,0 +1,67 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdio.h>
+
+struct st
+{
+  char name[30];
+  int Class;
+  st* ptr;
+};
+
+void main(){
+
+int i=1;
+
+ st * head, *tail;
+ st* s = new st;
+
+cout<<"\nEnter name of student "<<i<<" : ";
+ gets(s->name);
+
+ cout<<"\nEnter class : ";
+ cin>>s->Class;
+
+ head = tail = s;
+
+
+for(char ch;;i++)
+{
+ cout<<"\nWant to enter more data ? (y/n) : ";
+ cin>>ch;
+
+ if(ch=='n')
+ break;
+ s = new st;
+
+ cout<<"\nEnter name of student "<<i+1<<" : ";
+ gets(s->name);
+
+ cout<<"\nEnter class : ";
+ cin>>s->Class;
+
+  s->ptr = NULL;
+
+   tail->ptr=s;
+   tail=s;
+
+}
+
+
+do
+{
+  cout<<"\nName : "<<head->name;
+  cout<<"\nClass : "<<head->Class;
+  cout<<endl;
+
+  head=head->ptr;
+
+}while(head->ptr!=NULL);
+
+cout<<"\nName : "<<head->name;
+  cout<<"\nClass : "<<head->Class;
+
+ delete s;
+
+getch();
+}

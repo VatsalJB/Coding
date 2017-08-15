@@ -1,0 +1,69 @@
+#include<iostream.h>
+#include<conio.h>
+
+class add
+{
+  public :
+
+  int n1,n2;
+
+  void input();
+  void display();
+
+};
+
+void add :: input()
+{
+  cout<<"\nEnter the 2 nos. : ";
+  cin>>n1>>n2;
+}
+
+void add :: display()
+{
+  cout<<"\nTheir sum is : "<<(n1+n2);
+}
+
+
+class product
+{
+  public :
+
+  int a,b;
+
+  void input();
+  void display();
+  void output(product,add);
+
+};
+
+void product :: input()
+{
+  cout<<"\nEnter the 2 nos. : ";
+  cin>>a>>b;
+}
+
+void product :: display()
+{
+  cout<<"\nTheir product is : "<<(a*b);
+}
+
+void product :: output(product p,add a)
+{
+
+  p.input();
+  p.a=10;
+  p.display();
+  a.input();
+  a.display();
+}
+
+
+void main(){
+
+product pr;
+add ad;
+
+pr.output(pr,ad);
+
+getch();
+}

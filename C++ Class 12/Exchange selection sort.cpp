@@ -1,0 +1,35 @@
+#include<iostream.h>
+#include<conio.h>
+
+void main(){
+int A[10],i,j,min,k,temp;
+
+cout<<"\nEnter the numbers : ";
+
+for(i=0;i<10;i++)
+cin>>A[i];
+
+for(i=0;i<10;i++)
+{
+   min=A[i];
+   k=i;
+
+   for(j=i;j<10;j++)
+   if(min>A[j])
+   {
+    min=A[j];
+    k=j;
+   }
+
+  temp=A[i];
+  A[i]=min;
+  A[k]=temp;
+}
+
+cout<<"\nThe ascending order is : ";
+
+for(i=0;i<10;i++)
+cout<<A[i]<<" ";
+
+getch();
+}

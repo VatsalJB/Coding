@@ -1,0 +1,12 @@
+#include<iostream.h>
+#include<conio.h>
+
+void main(){
+for(int i=0;char ch=('a'&&i<6);i++)
+cout<<i<<" "<<ch<<endl;
+
+char ch=0;
+cout<<ch;
+
+getch();
+}

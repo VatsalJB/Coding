@@ -1,0 +1,42 @@
+#include<iostream.h>
+#include<conio.h>
+
+class c
+{
+  int a,b;
+
+  public :
+
+  c(int x)
+  {
+    cout<<"\nEnter the 2 numbers : ";
+    cin>>a>>b;
+
+    if(x==1)
+    cout<<"\nTheir sum is : "<<a+b;
+    else
+    cout<<"\nTheir product is : "<<a*b;
+  }
+
+  //void display();
+
+};
+/*
+void c :: display()
+{
+ cout<<"\nThe numbers are : "<<a<<" "<<b;
+}
+*/
+void main(){
+int x;
+
+cout<<"1.Add\n2.Multiply\n";
+cout<<"\nEnter the option : ";
+cin>>x;
+
+c c1(x);
+
+//c1.display();
+
+getch();
+}

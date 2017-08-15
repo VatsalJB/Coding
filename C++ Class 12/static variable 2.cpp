@@ -1,0 +1,37 @@
+#include<iostream.h>
+#include<conio.h>
+
+class A
+{
+  static int i = 0;
+
+  public :
+
+  void increment()
+  {
+    i++;
+    cout<<"\nThe incremented value is : "<<i;
+  }
+
+
+  void decrement()
+  {
+   i--;
+   cout<<"\nThe decremented value is : "<<i;
+  }
+};
+
+void main(){
+A a,b;
+
+cout<<"\nObject a\n";
+a.increment();
+cout<<"\nObject b\n";
+b.increment();
+cout<<"\nObject a\n";
+a.increment();
+
+b.decrement();
+
+getch();
+}

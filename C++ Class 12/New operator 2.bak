@@ -1,0 +1,19 @@
+#include<iostream.h>
+#include<conio.h>
+
+void main(){
+int j;
+
+i = new int;
+
+cout<<"Enter the value : ";
+cin>>j;
+
+i=&j;
+
+cout<<"\nMemory address of j : "<<i;
+
+delete i;
+
+getch();
+}

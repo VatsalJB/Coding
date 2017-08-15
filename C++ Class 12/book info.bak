@@ -1,0 +1,70 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdio.h>
+#include<string.h>
+
+//int c=0;
+
+class library
+{
+  char bname[20],status[10];
+  float price;
+
+  public :
+  int i;
+
+  void input()
+  {
+   cout<<"\nEnter the book name : ";
+   gets(bname);
+
+   cout<<"\nEnter the price : ";
+   cin>>price;
+
+   cout<<"\nEnter the status of the book : \n1.Issued\n2.Available\n";
+   cin>>i;
+
+   if(i==1)
+   strcpy(status,"Issued");
+   else
+   strcpy(status,"Available");
+  }
+
+  int count()
+  {
+   static int c=0;
+
+   if(price<200)
+   c++;
+
+   return c;
+  }
+
+  void display()
+  {
+   cout<<"\n\nName of the book : "<<bname;
+   cout<<"\nPrice : "<<price;
+   cout<<"\nStatus : "<<status;
+  }
+
+};
+
+void main(){
+library lib1,lib2,lib3;
+
+lib1.input();
+lib1.display();
+lib1.count();
+
+lib2.input();
+lib2.display();
+lib2.count();
+
+lib3.input();
+lib3.display();
+
+
+cout<<"\nNo. of books below Rs. 200 are : "<<lib3.count();
+
+getch();
+}
