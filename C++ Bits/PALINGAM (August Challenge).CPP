@@ -1,71 +1,58 @@
 #include<stdio.h>
-#include<string.h>
+#include<bits/stdc++.h>
 
-int palindrome(char str[])
-{
-  int size=strlen(str);
-  
- // printf("\n%c",str[size-1]);
-
-  for(int i=0,j=size-1;i<=size/2;i++,j--)     //size-1 = '\0'
-  if(str[i]!=str[j])
-  return 0;
-
-  return 1;
-}
+using namespace std;
 
 int main()
 {
-   int t;
+    int t;
 
-   scanf("%d",&t);
+    scanf("%d",&t);
 
-   while(t--)
-   {
-     char s[501],t[501],w[1002];
+    while(t--)
+    {
+        char s[501],t[501];
 
-     int flag=0;
+        int flag=0,size=0;
 
-     scanf(" %s",s);
-     scanf(" %s",t);
+        scanf(" %s",s);
+        scanf(" %s",t);
 
-     for(int i=0,j=0,k=0;t[j]!='\0';)
-     {
-         if(i<=j)
-         {
-           w[k]=s[i];
-           k++;
-           i++;
+        for(int i=0;s[i]!='\0';i++)
+        size++;
 
-           w[k]='\0';
+        sort(s,s+size);
+        sort(t,t+size);
 
-           if(palindrome(w)&&i!=1)
-           {
-             flag=1;
-             break;
-           }
-         }
-         else
-         {
-           w[k]=t[j];
-           k++;
-           j++;
+        int i,j=0;
 
-           w[k]='\0';
+        for(i=0;(i+1)<size;i++)
+        {
+            if(s[i]==s[i+1])
+            {
+               for(j=0;j<size;j++)
+               if(s[i]==t[j])
+               {
+                   break;
+               }
+            }
 
-           if(palindrome(w))
-           {
-             flag=2;
-             break;
-           }
-         }
-     }
+            if(j==size)
+            {
+                flag=2;
+                break;
+            }
 
-     if(flag==1)
-     printf("A\n");
-     else
-     printf("B\n");
-   }
+        }
 
-   return 0;
+
+        if(flag==2)
+        printf("A\n");
+        else
+        printf("B\n");
+
+
+    }
+
+    return 0;
 }
